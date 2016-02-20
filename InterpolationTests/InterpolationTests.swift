@@ -7,30 +7,23 @@
 //
 
 import XCTest
-@testable import Interpolation
+import Interpolation
 
-class InterpolationTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class InterpolationTests: XCTestCase
+{
+    func test_Float()
+    {
+        let f1 = Float(1)
+        let f2 = Float(2)
+        
+        XCTAssertEqual(interpolate(f1, f2, 0.5), 1.5)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func test_Double()
+    {
+        let d1 = Double(1)
+        let d2 = Double(2)
+        
+        XCTAssertEqual(interpolate(d1, d2, 0.5), 1.5)
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
