@@ -12,7 +12,6 @@
 		8FCE6A571C78935D0079A587 /* InterpolationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6A561C78935D0079A587 /* InterpolationTests.swift */; };
 		8FCE6A621C7893BE0079A587 /* Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6A611C7893BE0079A587 /* Interpolation.swift */; };
 		8FCE6A641C7897B80079A587 /* Linear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6A631C7897B80079A587 /* Linear.swift */; };
-		8FCE6A661C78ED660079A587 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6A651C78ED660079A587 /* Cartfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +33,6 @@
 		8FCE6A581C78935D0079A587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FCE6A611C7893BE0079A587 /* Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolation.swift; sourceTree = "<group>"; };
 		8FCE6A631C7897B80079A587 /* Linear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linear.swift; sourceTree = "<group>"; };
-		8FCE6A651C78ED660079A587 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		8FCE6A671C78EDE00079A587 /* Arithmetic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arithmetic.framework; path = Carthage/Build/iOS/Arithmetic.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +57,6 @@
 		8FCE6A3D1C78935C0079A587 = {
 			isa = PBXGroup;
 			children = (
-				8FCE6A671C78EDE00079A587 /* Arithmetic.framework */,
-				8FCE6A651C78ED660079A587 /* Cartfile */,
 				8FCE6A491C78935C0079A587 /* Interpolation */,
 				8FCE6A551C78935D0079A587 /* InterpolationTests */,
 				8FCE6A481C78935C0079A587 /* Products */,
@@ -119,7 +114,6 @@
 				8FCE6A431C78935C0079A587 /* Frameworks */,
 				8FCE6A441C78935C0079A587 /* Headers */,
 				8FCE6A451C78935C0079A587 /* Resources */,
-				8FCE6A6A1C78EF110079A587 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -189,7 +183,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FCE6A661C78ED660079A587 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,23 +194,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8FCE6A6A1C78EF110079A587 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Arithmetic.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8FCE6A421C78935C0079A587 /* Sources */ = {
