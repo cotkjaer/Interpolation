@@ -50,4 +50,28 @@ class InterpolationTests: XCTestCase
         
         XCTAssertEqual((c1, c2) ◊ 0.5, UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.5))
     }
+    
+    func test_Array()
+    {
+        let a0 : [Double] = []
+        let a1 = [1.0]
+        let a2 = [1.0,2.0]
+        let a3 = [1.0,2.0,3.0]
+
+        XCTAssertEqual(a0 ◊ 0.5, [])
+        XCTAssertEqual(a1 ◊ 0.5, [])
+        XCTAssertEqual(a2 ◊ 0.1, [1.1])
+        XCTAssertEqual(a3 ◊ 0.5, [1.5,2.5])
+        
+        let t0 : [Double] = []
+        let t1 = [0.0]
+        let t2 = [0.5,1.0]
+        let t3 = [0,0.5,1]
+        
+        XCTAssertEqual(a2 ◊ t1, [1.0])
+        XCTAssertEqual(a3 ◊ t2, [1.5, 3.0])
+        XCTAssertEqual(a3 ◊ t3, [1.0, 2.5])
+        XCTAssertEqual(a2 ◊ t0, [])
+        XCTAssertEqual(a3 ◊ t1, [])
+    }
 }
