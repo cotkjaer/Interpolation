@@ -37,7 +37,7 @@ class InterpolationTests: XCTestCase
     
     func test_CGPoint()
     {
-        let p1 = CGPointZero
+        let p1 = CGPoint.zero
         let p2 = CGPoint(x: 1, y: 10)
         
         XCTAssertEqual((p1, p2) ◊ 0.5, CGPoint(x: 0.5, y: 5))

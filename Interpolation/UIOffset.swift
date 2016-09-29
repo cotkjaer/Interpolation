@@ -8,13 +8,6 @@
 
 import UIKit
 
-/*extension UIOffset : LinearInterpolatable
-{
-    public typealias InterpolationFactor = CGFloat
-    public typealias InterpolationResult = UIOffset
-}
-*/
-
 public func ◊ (ab: (UIOffset, UIOffset), t: CGFloat) -> UIOffset
 {
     return UIOffset(

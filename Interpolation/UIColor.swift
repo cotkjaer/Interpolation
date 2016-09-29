@@ -8,30 +8,10 @@
 
 import UIKit
 
-/*
-extension UIColor : LinearInterpolatable
-{
-    public typealias InterpolationFactor = CGFloat
-    public typealias InterpolationResult = UIColor
-    
-    public static func lerp(a: UIColor, b: UIColor, f: UIColor.InterpolationFactor) -> UIColor
-    {
-        let A = rgba(a)
-        let B = rgba(b)
-        
-        return UIColor(
-            red: (A.red, B.red) ◊ f,
-            green: (A.green, B.green) ◊ f,
-            blue: (A.blue, B.blue) ◊ f,
-            alpha: (A.alpha, B.alpha) ◊ f
-        )
-    }
-}
-*/
 /// LERP operator for UIColor (based on RGBA values)
 public func ◊ (ab: (UIColor, UIColor), t: CGFloat) -> UIColor
 {
-    func rgba(color: UIColor) -> (red: CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat)
+    func rgba(_ color: UIColor) -> (red: CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat)
     {
         var red : CGFloat = 0
         var green : CGFloat = 0

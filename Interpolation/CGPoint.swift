@@ -8,14 +8,6 @@
 
 import Foundation
 
-/*
-extension CGPoint : LinearInterpolatable
-{
-    public typealias InterpolationFactor = CGFloat
-    public typealias InterpolationResult = CGPoint
-}
-*/
-
 /// LERP operator for CGPoint
 public func ◊ (ab: (CGPoint, CGPoint), t: CGFloat) -> CGPoint
 {
