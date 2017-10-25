@@ -17,6 +17,7 @@ class InterpolationTests: XCTestCase
         let f2 = Float(2)
         
         XCTAssertEqual((f1, f2) ◊ 0.5, 1.5)
+        XCTAssertEqual(lerp(f1, f2, 0.1), 1.1)
     }
     
     func test_Double()
@@ -25,6 +26,7 @@ class InterpolationTests: XCTestCase
         let d2 = Double(2)
         
         XCTAssertEqual((d1, d2) ◊ 0.5, 1.5)
+        XCTAssertEqual(lerp(d1, d2, 0.99), 1.99)
     }
     
     func test_CGFloat()
@@ -33,6 +35,7 @@ class InterpolationTests: XCTestCase
         let f2 = CGFloat(2)
         
         XCTAssertEqual((f1, f2) ◊ 0.5, 1.5)
+        XCTAssertEqual(lerp(f1, f2, 0.01), 1.01)
     }
     
     func test_CGPoint()
@@ -41,14 +44,6 @@ class InterpolationTests: XCTestCase
         let p2 = CGPoint(x: 1, y: 10)
         
         XCTAssertEqual((p1, p2) ◊ 0.5, CGPoint(x: 0.5, y: 5))
-    }
-    
-    func test_UIColor()
-    {
-        let c1 = UIColor(white: 0, alpha: 0)
-        let c2 = UIColor(white: 0.5, alpha: 1)
-        
-        XCTAssertEqual((c1, c2) ◊ 0.5, UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.5))
     }
     
     func test_Array()
@@ -73,5 +68,12 @@ class InterpolationTests: XCTestCase
         XCTAssertEqual(a3 ◊ t3, [1.0, 2.5])
         XCTAssertEqual(a2 ◊ t0, [])
         XCTAssertEqual(a3 ◊ t1, [])
+    }
+    
+    func test_global_array()
+    {
+        let a0: [Double] = [1, 2, 3, 4]
+        
+        XCTAssertEqual(lerp(a0, 0.5), [1.5, 2.5, 3.5])
     }
 }

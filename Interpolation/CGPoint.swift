@@ -6,13 +6,18 @@
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
-/// LERP operator for CGPoint
-public func ◊ (ab: (CGPoint, CGPoint), t: CGFloat) -> CGPoint
+extension CGPoint: Interpolatable
 {
-    return CGPoint(
-        x: (ab.0.x, ab.1.x) ◊ t,
-        y: (ab.0.y, ab.1.y) ◊ t
-    )
+    public typealias InterpolationFactor = CGFloat
+    public typealias InterpolationResult = CGPoint
+    
+    public static func lerp(a: CGPoint, b: CGPoint, t: CGFloat) -> CGPoint
+    {
+        return CGPoint(
+            x: CGFloat.lerp(a: a.x, b: b.x, t: t),
+            y: CGFloat.lerp(a: a.y, b: b.y, t: t)
+        )
+    }
 }

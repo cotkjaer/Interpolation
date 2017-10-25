@@ -8,12 +8,13 @@
 
 import UIKit
 
-public func ◊ (ab: (UIOffset, UIOffset), t: CGFloat) -> UIOffset
+extension UIOffset : Interpolatable
 {
-    return UIOffset(
-        horizontal: (ab.0.horizontal, ab.1.horizontal) ◊ t,
-        vertical: (ab.0.vertical, ab.1.vertical) ◊ t
-    )
+    public typealias InterpolationFactor = CGFloat
+    public typealias InterpolationResult = UIOffset
+
+    public static func lerp(a: UIOffset, b: UIOffset, t: CGFloat) -> UIOffset
+    {
+        return UIOffset(horizontal: CGFloat.lerp(a: a.horizontal, b: b.horizontal, t: t), vertical: CGFloat.lerp(a: a.vertical, b: b.vertical, t: t))
+    }
 }
-
-
